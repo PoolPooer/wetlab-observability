@@ -7,13 +7,293 @@ spec:
   instanceSelector:
     matchLabels:
       dashboards: wetlab-grafana
-  json: >
+  json: |
     {
       "title": "Wetlab GPU Dashboard",
       "tags": ["wetlab", "gpu", "openshift"],
       "timezone": "browser",
       "schemaVersion": 39,
-      "version": 1,
+      "version": 2,
       "refresh": "10s",
-      "panels": []
+      "panels": [
+        {
+          "id": 1,
+          "type": "stat",
+          "title": "Wet1 GPU Temp",
+          "gridPos": { "h": 6, "w": 8, "x": 0, "y": 0 },
+          "targets": [
+            {
+              "expr": "DCGM_FI_DEV_GPU_TEMP{Hostname=\"c0-47-0e-20-70-42\"}",
+              "legendFormat": "GPU Temp"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "celsius",
+              "decimals": 0
+            },
+            "overrides": []
+          },
+          "options": {
+            "reduceOptions": {
+              "calcs": ["lastNotNull"],
+              "fields": "",
+              "values": false
+            },
+            "orientation": "auto",
+            "textMode": "auto",
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto"
+          }
+        },
+        {
+          "id": 2,
+          "type": "stat",
+          "title": "Wet2 GPU Temp",
+          "gridPos": { "h": 6, "w": 8, "x": 8, "y": 0 },
+          "targets": [
+            {
+              "expr": "DCGM_FI_DEV_GPU_TEMP{Hostname=\"c0-47-0e-20-70-5c\"}",
+              "legendFormat": "GPU Temp"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "celsius",
+              "decimals": 0
+            },
+            "overrides": []
+          },
+          "options": {
+            "reduceOptions": {
+              "calcs": ["lastNotNull"],
+              "fields": "",
+              "values": false
+            },
+            "orientation": "auto",
+            "textMode": "auto",
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto"
+          }
+        },
+        {
+          "id": 3,
+          "type": "stat",
+          "title": "Wet3 GPU Temp",
+          "gridPos": { "h": 6, "w": 8, "x": 16, "y": 0 },
+          "targets": [
+            {
+              "expr": "DCGM_FI_DEV_GPU_TEMP{Hostname=\"server4.selab.mad.redhat.com\"}",
+              "legendFormat": "GPU Temp"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "celsius",
+              "decimals": 0
+            },
+            "overrides": []
+          },
+          "options": {
+            "reduceOptions": {
+              "calcs": ["lastNotNull"],
+              "fields": "",
+              "values": false
+            },
+            "orientation": "auto",
+            "textMode": "auto",
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto"
+          }
+        },
+        {
+          "id": 4,
+          "type": "stat",
+          "title": "Wet1 GPU Util",
+          "gridPos": { "h": 6, "w": 8, "x": 0, "y": 6 },
+          "targets": [
+            {
+              "expr": "DCGM_FI_DEV_GPU_UTIL{Hostname=\"c0-47-0e-20-70-42\"}",
+              "legendFormat": "GPU Util"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "percent",
+              "decimals": 0
+            },
+            "overrides": []
+          },
+          "options": {
+            "reduceOptions": {
+              "calcs": ["lastNotNull"],
+              "fields": "",
+              "values": false
+            },
+            "orientation": "auto",
+            "textMode": "auto",
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto"
+          }
+        },
+        {
+          "id": 5,
+          "type": "stat",
+          "title": "Wet2 GPU Util",
+          "gridPos": { "h": 6, "w": 8, "x": 8, "y": 6 },
+          "targets": [
+            {
+              "expr": "DCGM_FI_DEV_GPU_UTIL{Hostname=\"c0-47-0e-20-70-5c\"}",
+              "legendFormat": "GPU Util"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "percent",
+              "decimals": 0
+            },
+            "overrides": []
+          },
+          "options": {
+            "reduceOptions": {
+              "calcs": ["lastNotNull"],
+              "fields": "",
+              "values": false
+            },
+            "orientation": "auto",
+            "textMode": "auto",
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto"
+          }
+        },
+        {
+          "id": 6,
+          "type": "stat",
+          "title": "Wet3 GPU Util",
+          "gridPos": { "h": 6, "w": 8, "x": 16, "y": 6 },
+          "targets": [
+            {
+              "expr": "DCGM_FI_DEV_GPU_UTIL{Hostname=\"server4.selab.mad.redhat.com\"}",
+              "legendFormat": "GPU Util"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "percent",
+              "decimals": 0
+            },
+            "overrides": []
+          },
+          "options": {
+            "reduceOptions": {
+              "calcs": ["lastNotNull"],
+              "fields": "",
+              "values": false
+            },
+            "orientation": "auto",
+            "textMode": "auto",
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto"
+          }
+        },
+        {
+          "id": 7,
+          "type": "stat",
+          "title": "Wet1 VRAM Used",
+          "gridPos": { "h": 6, "w": 8, "x": 0, "y": 12 },
+          "targets": [
+            {
+              "expr": "DCGM_FI_DEV_FB_USED{Hostname=\"c0-47-0e-20-70-42\"}",
+              "legendFormat": "VRAM Used"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "mbytes",
+              "decimals": 0
+            },
+            "overrides": []
+          },
+          "options": {
+            "reduceOptions": {
+              "calcs": ["lastNotNull"],
+              "fields": "",
+              "values": false
+            },
+            "orientation": "auto",
+            "textMode": "auto",
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto"
+          }
+        },
+        {
+          "id": 8,
+          "type": "stat",
+          "title": "Wet2 VRAM Used",
+          "gridPos": { "h": 6, "w": 8, "x": 8, "y": 12 },
+          "targets": [
+            {
+              "expr": "DCGM_FI_DEV_FB_USED{Hostname=\"c0-47-0e-20-70-5c\"}",
+              "legendFormat": "VRAM Used"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "mbytes",
+              "decimals": 0
+            },
+            "overrides": []
+          },
+          "options": {
+            "reduceOptions": {
+              "calcs": ["lastNotNull"],
+              "fields": "",
+              "values": false
+            },
+            "orientation": "auto",
+            "textMode": "auto",
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto"
+          }
+        },
+        {
+          "id": 9,
+          "type": "stat",
+          "title": "Wet3 VRAM Used",
+          "gridPos": { "h": 6, "w": 8, "x": 16, "y": 12 },
+          "targets": [
+            {
+              "expr": "DCGM_FI_DEV_FB_USED{Hostname=\"server4.selab.mad.redhat.com\"}",
+              "legendFormat": "VRAM Used"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "mbytes",
+              "decimals": 0
+            },
+            "overrides": []
+          },
+          "options": {
+            "reduceOptions": {
+              "calcs": ["lastNotNull"],
+              "fields": "",
+              "values": false
+            },
+            "orientation": "auto",
+            "textMode": "auto",
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto"
+          }
+        }
+      ]
     }
