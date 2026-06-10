@@ -1,0 +1,19 @@
+apiVersion: grafana.integreatly.org/v1beta1
+kind: GrafanaDashboard
+metadata:
+  name: wetlab-gpu-dashboard
+  namespace: wetlab-monitoring
+spec:
+  instanceSelector:
+    matchLabels:
+      dashboards: wetlab-grafana
+  json: >
+    {
+      "title": "Wetlab GPU Dashboard",
+      "tags": ["wetlab", "gpu", "openshift"],
+      "timezone": "browser",
+      "schemaVersion": 39,
+      "version": 1,
+      "refresh": "10s",
+      "panels": []
+    }
