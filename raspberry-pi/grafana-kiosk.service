@@ -1,0 +1,17 @@
+# /etc/systemd/system/grafana-kiosk.service
+[Unit]
+Description=Grafana Kiosk
+After=graphical.target network-online.target
+Wants=network-online.target
+
+[Service]
+User=wet4
+Environment="DISPLAY=:0"
+Environment="XAUTHORITY=/home/wet4/.Xauthority"
+ExecStartPre=/bin/sleep 45
+ExecStart=/usr/local/bin/grafana-kiosk -URL "https://grafana.wetlab.ie/playlists/play/adc7rzk?kiosk=true&_dash.hideTimePicker=true&_dash.hideVariables=true&_dash.hideLinks=true"
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=graphical.target
