@@ -90,8 +90,10 @@ spec:
           "pluginVersion": "12.4.1",
           "targets": [
             {
-              "expr": "DCGM_FI_DEV_GPU_TEMP{Hostname=\"c0-47-0e-20-70-42\"}",
+              "editorMode": "code",
+              "expr": "max(DCGM_FI_DEV_GPU_TEMP{Hostname=\"c0-47-0e-20-70-42\"})",
               "legendFormat": "GPU Temp",
+              "range": true,
               "refId": "A"
             }
           ],
@@ -158,8 +160,10 @@ spec:
           "pluginVersion": "12.4.1",
           "targets": [
             {
-              "expr": "DCGM_FI_DEV_GPU_TEMP{Hostname=\"c0-47-0e-20-70-5c\"}",
+              "editorMode": "code",
+              "expr": "max(DCGM_FI_DEV_GPU_TEMP{Hostname=\"c0-47-0e-20-70-5c\"})",
               "legendFormat": "GPU Temp",
+              "range": true,
               "refId": "A"
             }
           ],
@@ -226,8 +230,10 @@ spec:
           "pluginVersion": "12.4.1",
           "targets": [
             {
-              "expr": "DCGM_FI_DEV_GPU_TEMP{Hostname=\"server4.selab.mad.redhat.com\"}",
+              "editorMode": "code",
+              "expr": "max(DCGM_FI_DEV_GPU_TEMP{Hostname=\"server4.selab.mad.redhat.com\"})",
               "legendFormat": "GPU Temp",
+              "range": true,
               "refId": "A"
             }
           ],
@@ -271,7 +277,7 @@ spec:
           "id": 4,
           "options": {
             "colorMode": "value",
-            "graphMode": "area",
+            "graphMode": "none",
             "justifyMode": "auto",
             "orientation": "auto",
             "percentChangeColorMode": "standard",
@@ -292,8 +298,10 @@ spec:
           "pluginVersion": "12.4.1",
           "targets": [
             {
-              "expr": "DCGM_FI_DEV_GPU_UTIL{Hostname=\"c0-47-0e-20-70-42\"}",
+              "editorMode": "code",
+              "expr": "max(DCGM_FI_DEV_GPU_UTIL{Hostname=\"c0-47-0e-20-70-42\"})",
               "legendFormat": "GPU Util",
+              "range": true,
               "refId": "A"
             }
           ],
@@ -337,7 +345,7 @@ spec:
           "id": 5,
           "options": {
             "colorMode": "value",
-            "graphMode": "area",
+            "graphMode": "none",
             "justifyMode": "auto",
             "orientation": "auto",
             "percentChangeColorMode": "standard",
@@ -358,8 +366,10 @@ spec:
           "pluginVersion": "12.4.1",
           "targets": [
             {
-              "expr": "DCGM_FI_DEV_GPU_UTIL{Hostname=\"c0-47-0e-20-70-5c\"}",
+              "editorMode": "code",
+              "expr": "max(DCGM_FI_DEV_GPU_UTIL{Hostname=\"c0-47-0e-20-70-5c\"})",
               "legendFormat": "GPU Util",
+              "range": true,
               "refId": "A"
             }
           ],
@@ -403,7 +413,7 @@ spec:
           "id": 6,
           "options": {
             "colorMode": "value",
-            "graphMode": "area",
+            "graphMode": "none",
             "justifyMode": "auto",
             "orientation": "auto",
             "percentChangeColorMode": "standard",
@@ -424,8 +434,10 @@ spec:
           "pluginVersion": "12.4.1",
           "targets": [
             {
-              "expr": "DCGM_FI_DEV_GPU_UTIL{Hostname=\"server4.selab.mad.redhat.com\"}",
+              "editorMode": "code",
+              "expr": "max(DCGM_FI_DEV_GPU_UTIL{Hostname=\"server4.selab.mad.redhat.com\"})",
               "legendFormat": "GPU Util",
+              "range": true,
               "refId": "A"
             }
           ],
@@ -467,7 +479,7 @@ spec:
           "id": 7,
           "options": {
             "colorMode": "value",
-            "graphMode": "area",
+            "graphMode": "none",
             "justifyMode": "auto",
             "orientation": "auto",
             "percentChangeColorMode": "standard",
@@ -488,8 +500,10 @@ spec:
           "pluginVersion": "12.4.1",
           "targets": [
             {
-              "expr": "DCGM_FI_DEV_FB_USED{Hostname=\"c0-47-0e-20-70-42\"}",
+              "editorMode": "code",
+              "expr": "max(DCGM_FI_DEV_FB_USED{Hostname=\"c0-47-0e-20-70-42\"})",
               "legendFormat": "VRAM Used",
+              "range": true,
               "refId": "A"
             }
           ],
@@ -531,7 +545,7 @@ spec:
           "id": 8,
           "options": {
             "colorMode": "value",
-            "graphMode": "area",
+            "graphMode": "none",
             "justifyMode": "auto",
             "orientation": "auto",
             "percentChangeColorMode": "standard",
@@ -552,8 +566,10 @@ spec:
           "pluginVersion": "12.4.1",
           "targets": [
             {
-              "expr": "DCGM_FI_DEV_FB_USED{Hostname=\"c0-47-0e-20-70-5c\"}",
+              "editorMode": "code",
+              "expr": "max(DCGM_FI_DEV_FB_USED{Hostname=\"c0-47-0e-20-70-5c\"})",
               "legendFormat": "VRAM Used",
+              "range": true,
               "refId": "A"
             }
           ],
@@ -595,7 +611,7 @@ spec:
           "id": 9,
           "options": {
             "colorMode": "value",
-            "graphMode": "area",
+            "graphMode": "none",
             "justifyMode": "auto",
             "orientation": "auto",
             "percentChangeColorMode": "standard",
@@ -616,8 +632,10 @@ spec:
           "pluginVersion": "12.4.1",
           "targets": [
             {
-              "expr": "DCGM_FI_DEV_FB_USED{Hostname=\"server4.selab.mad.redhat.com\"}",
+              "editorMode": "code",
+              "expr": "max(DCGM_FI_DEV_FB_USED{Hostname=\"server4.selab.mad.redhat.com\"})",
               "legendFormat": "VRAM Used",
+              "range": true,
               "refId": "A"
             }
           ],
@@ -644,6 +662,6 @@ spec:
       "timezone": "browser",
       "title": "wet-lab-metrics",
       "uid": "ad5c4pg",
-      "version": 30,
+      "version": 43,
       "weekStart": ""
     }
