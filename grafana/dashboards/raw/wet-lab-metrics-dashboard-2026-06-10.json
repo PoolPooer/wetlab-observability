@@ -71,6 +71,9 @@
           "values": false
         },
         "showPercentChange": false,
+        "text": {
+          "valueSize": 65
+        },
         "textMode": "auto",
         "wideLayout": true
       },
@@ -136,6 +139,9 @@
           "values": false
         },
         "showPercentChange": false,
+        "text": {
+          "valueSize": 65
+        },
         "textMode": "auto",
         "wideLayout": true
       },
@@ -201,6 +207,9 @@
           "values": false
         },
         "showPercentChange": false,
+        "text": {
+          "valueSize": 65
+        },
         "textMode": "auto",
         "wideLayout": true
       },
@@ -216,6 +225,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "openshift-prometheus"
+      },
       "fieldConfig": {
         "defaults": {
           "decimals": 0,
@@ -260,6 +273,9 @@
           "values": false
         },
         "showPercentChange": false,
+        "text": {
+          "valueSize": 65
+        },
         "textMode": "auto",
         "wideLayout": true
       },
@@ -275,6 +291,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "openshift-prometheus"
+      },
       "fieldConfig": {
         "defaults": {
           "decimals": 0,
@@ -319,6 +339,9 @@
           "values": false
         },
         "showPercentChange": false,
+        "text": {
+          "valueSize": 65
+        },
         "textMode": "auto",
         "wideLayout": true
       },
@@ -334,6 +357,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "openshift-prometheus"
+      },
       "fieldConfig": {
         "defaults": {
           "decimals": 0,
@@ -378,6 +405,9 @@
           "values": false
         },
         "showPercentChange": false,
+        "text": {
+          "valueSize": 65
+        },
         "textMode": "auto",
         "wideLayout": true
       },
@@ -393,6 +423,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "openshift-prometheus"
+      },
       "fieldConfig": {
         "defaults": {
           "decimals": 0,
@@ -435,6 +469,9 @@
           "values": false
         },
         "showPercentChange": false,
+        "text": {
+          "valueSize": 65
+        },
         "textMode": "auto",
         "wideLayout": true
       },
@@ -450,6 +487,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "openshift-prometheus"
+      },
       "fieldConfig": {
         "defaults": {
           "decimals": 0,
@@ -492,6 +533,9 @@
           "values": false
         },
         "showPercentChange": false,
+        "text": {
+          "valueSize": 65
+        },
         "textMode": "auto",
         "wideLayout": true
       },
@@ -507,6 +551,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "openshift-prometheus"
+      },
       "fieldConfig": {
         "defaults": {
           "decimals": 0,
@@ -549,6 +597,9 @@
           "values": false
         },
         "showPercentChange": false,
+        "text": {
+          "valueSize": 65
+        },
         "textMode": "auto",
         "wideLayout": true
       },
@@ -583,6 +634,6 @@
   "timezone": "browser",
   "title": "wet-lab-metrics",
   "uid": "ad5c4pg",
-  "version": 1,
+  "version": 30,
   "weekStart": ""
 }

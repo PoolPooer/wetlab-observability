@@ -1,197 +1,639 @@
-apiVersion: grafana.integreatly.org/v1beta1
-kind: GrafanaDashboard
-metadata:
-  name: wetlab-gpu-dashboard
-  namespace: wetlab-monitoring
-spec:
-  instanceSelector:
-    matchLabels:
-      dashboards: wetlab-grafana
-  json: "{\n  \"annotations\": {\n    \"list\": [\n      {\n        \"builtIn\": 1,\n\
-    \        \"datasource\": {\n          \"type\": \"grafana\",\n          \"uid\"\
-    : \"-- Grafana --\"\n        },\n        \"enable\": true,\n        \"hide\":\
-    \ true,\n        \"iconColor\": \"rgba(0, 211, 255, 1)\",\n        \"name\": \"\
-    Annotations & Alerts\",\n        \"type\": \"dashboard\"\n      }\n    ]\n  },\n\
-    \  \"editable\": true,\n  \"fiscalYearStartMonth\": 0,\n  \"graphTooltip\": 0,\n\
-    \  \"links\": [],\n  \"panels\": [\n    {\n      \"datasource\": {\n        \"\
-    type\": \"prometheus\",\n        \"uid\": \"openshift-prometheus\"\n      },\n\
-    \      \"fieldConfig\": {\n        \"defaults\": {\n          \"decimals\": 0,\n\
-    \          \"mappings\": [],\n          \"thresholds\": {\n            \"mode\"\
-    : \"absolute\",\n            \"steps\": [\n              {\n                \"\
-    color\": \"green\",\n                \"value\": 0\n              },\n        \
-    \      {\n                \"color\": \"#EAB839\",\n                \"value\":\
-    \ 75\n              },\n              {\n                \"color\": \"red\",\n\
-    \                \"value\": 85\n              }\n            ]\n          },\n\
-    \          \"unit\": \"celsius\"\n        },\n        \"overrides\": []\n    \
-    \  },\n      \"gridPos\": {\n        \"h\": 6,\n        \"w\": 8,\n        \"\
-    x\": 0,\n        \"y\": 0\n      },\n      \"id\": 1,\n      \"options\": {\n\
-    \        \"colorMode\": \"value\",\n        \"graphMode\": \"none\",\n       \
-    \ \"justifyMode\": \"auto\",\n        \"orientation\": \"auto\",\n        \"percentChangeColorMode\"\
-    : \"standard\",\n        \"reduceOptions\": {\n          \"calcs\": [\n      \
-    \      \"lastNotNull\"\n          ],\n          \"fields\": \"\",\n          \"\
-    values\": false\n        },\n        \"showPercentChange\": false,\n        \"\
-    textMode\": \"auto\",\n        \"wideLayout\": true\n      },\n      \"pluginVersion\"\
-    : \"12.4.1\",\n      \"targets\": [\n        {\n          \"expr\": \"DCGM_FI_DEV_GPU_TEMP{Hostname=\\\
-    \"c0-47-0e-20-70-42\\\"}\",\n          \"legendFormat\": \"GPU Temp\",\n     \
-    \     \"refId\": \"A\"\n        }\n      ],\n      \"title\": \"Wet1 GPU Temp\"\
-    ,\n      \"type\": \"stat\"\n    },\n    {\n      \"datasource\": {\n        \"\
-    type\": \"prometheus\",\n        \"uid\": \"openshift-prometheus\"\n      },\n\
-    \      \"fieldConfig\": {\n        \"defaults\": {\n          \"decimals\": 0,\n\
-    \          \"mappings\": [],\n          \"thresholds\": {\n            \"mode\"\
-    : \"absolute\",\n            \"steps\": [\n              {\n                \"\
-    color\": \"green\",\n                \"value\": 0\n              },\n        \
-    \      {\n                \"color\": \"#EAB839\",\n                \"value\":\
-    \ 75\n              },\n              {\n                \"color\": \"red\",\n\
-    \                \"value\": 85\n              }\n            ]\n          },\n\
-    \          \"unit\": \"celsius\"\n        },\n        \"overrides\": []\n    \
-    \  },\n      \"gridPos\": {\n        \"h\": 6,\n        \"w\": 8,\n        \"\
-    x\": 8,\n        \"y\": 0\n      },\n      \"id\": 2,\n      \"options\": {\n\
-    \        \"colorMode\": \"value\",\n        \"graphMode\": \"none\",\n       \
-    \ \"justifyMode\": \"auto\",\n        \"orientation\": \"auto\",\n        \"percentChangeColorMode\"\
-    : \"standard\",\n        \"reduceOptions\": {\n          \"calcs\": [\n      \
-    \      \"lastNotNull\"\n          ],\n          \"fields\": \"\",\n          \"\
-    values\": false\n        },\n        \"showPercentChange\": false,\n        \"\
-    textMode\": \"auto\",\n        \"wideLayout\": true\n      },\n      \"pluginVersion\"\
-    : \"12.4.1\",\n      \"targets\": [\n        {\n          \"expr\": \"DCGM_FI_DEV_GPU_TEMP{Hostname=\\\
-    \"c0-47-0e-20-70-5c\\\"}\",\n          \"legendFormat\": \"GPU Temp\",\n     \
-    \     \"refId\": \"A\"\n        }\n      ],\n      \"title\": \"Wet2 GPU Temp\"\
-    ,\n      \"type\": \"stat\"\n    },\n    {\n      \"datasource\": {\n        \"\
-    type\": \"prometheus\",\n        \"uid\": \"openshift-prometheus\"\n      },\n\
-    \      \"fieldConfig\": {\n        \"defaults\": {\n          \"decimals\": 0,\n\
-    \          \"mappings\": [],\n          \"thresholds\": {\n            \"mode\"\
-    : \"absolute\",\n            \"steps\": [\n              {\n                \"\
-    color\": \"green\",\n                \"value\": 0\n              },\n        \
-    \      {\n                \"color\": \"#EAB839\",\n                \"value\":\
-    \ 75\n              },\n              {\n                \"color\": \"red\",\n\
-    \                \"value\": 85\n              }\n            ]\n          },\n\
-    \          \"unit\": \"celsius\"\n        },\n        \"overrides\": []\n    \
-    \  },\n      \"gridPos\": {\n        \"h\": 6,\n        \"w\": 8,\n        \"\
-    x\": 16,\n        \"y\": 0\n      },\n      \"id\": 3,\n      \"options\": {\n\
-    \        \"colorMode\": \"value\",\n        \"graphMode\": \"none\",\n       \
-    \ \"justifyMode\": \"auto\",\n        \"orientation\": \"auto\",\n        \"percentChangeColorMode\"\
-    : \"standard\",\n        \"reduceOptions\": {\n          \"calcs\": [\n      \
-    \      \"lastNotNull\"\n          ],\n          \"fields\": \"\",\n          \"\
-    values\": false\n        },\n        \"showPercentChange\": false,\n        \"\
-    textMode\": \"auto\",\n        \"wideLayout\": true\n      },\n      \"pluginVersion\"\
-    : \"12.4.1\",\n      \"targets\": [\n        {\n          \"expr\": \"DCGM_FI_DEV_GPU_TEMP{Hostname=\\\
-    \"server4.selab.mad.redhat.com\\\"}\",\n          \"legendFormat\": \"GPU Temp\"\
-    ,\n          \"refId\": \"A\"\n        }\n      ],\n      \"title\": \"Wet3 GPU\
-    \ Temp\",\n      \"type\": \"stat\"\n    },\n    {\n      \"fieldConfig\": {\n\
-    \        \"defaults\": {\n          \"decimals\": 0,\n          \"mappings\":\
-    \ [],\n          \"max\": 100,\n          \"min\": 0,\n          \"thresholds\"\
-    : {\n            \"mode\": \"absolute\",\n            \"steps\": [\n         \
-    \     {\n                \"color\": \"green\",\n                \"value\": 0\n\
-    \              },\n              {\n                \"color\": \"red\",\n    \
-    \            \"value\": 80\n              }\n            ]\n          },\n   \
-    \       \"unit\": \"percent\"\n        },\n        \"overrides\": []\n      },\n\
-    \      \"gridPos\": {\n        \"h\": 6,\n        \"w\": 8,\n        \"x\": 0,\n\
-    \        \"y\": 6\n      },\n      \"id\": 4,\n      \"options\": {\n        \"\
-    colorMode\": \"value\",\n        \"graphMode\": \"area\",\n        \"justifyMode\"\
-    : \"auto\",\n        \"orientation\": \"auto\",\n        \"percentChangeColorMode\"\
-    : \"standard\",\n        \"reduceOptions\": {\n          \"calcs\": [\n      \
-    \      \"lastNotNull\"\n          ],\n          \"fields\": \"\",\n          \"\
-    values\": false\n        },\n        \"showPercentChange\": false,\n        \"\
-    textMode\": \"auto\",\n        \"wideLayout\": true\n      },\n      \"pluginVersion\"\
-    : \"12.4.1\",\n      \"targets\": [\n        {\n          \"expr\": \"DCGM_FI_DEV_GPU_UTIL{Hostname=\\\
-    \"c0-47-0e-20-70-42\\\"}\",\n          \"legendFormat\": \"GPU Util\",\n     \
-    \     \"refId\": \"A\"\n        }\n      ],\n      \"title\": \"Wet1 GPU Util\"\
-    ,\n      \"type\": \"stat\"\n    },\n    {\n      \"fieldConfig\": {\n       \
-    \ \"defaults\": {\n          \"decimals\": 0,\n          \"mappings\": [],\n \
-    \         \"max\": 100,\n          \"min\": 0,\n          \"thresholds\": {\n\
-    \            \"mode\": \"absolute\",\n            \"steps\": [\n             \
-    \ {\n                \"color\": \"green\",\n                \"value\": 0\n   \
-    \           },\n              {\n                \"color\": \"red\",\n       \
-    \         \"value\": 80\n              }\n            ]\n          },\n      \
-    \    \"unit\": \"percent\"\n        },\n        \"overrides\": []\n      },\n\
-    \      \"gridPos\": {\n        \"h\": 6,\n        \"w\": 8,\n        \"x\": 8,\n\
-    \        \"y\": 6\n      },\n      \"id\": 5,\n      \"options\": {\n        \"\
-    colorMode\": \"value\",\n        \"graphMode\": \"area\",\n        \"justifyMode\"\
-    : \"auto\",\n        \"orientation\": \"auto\",\n        \"percentChangeColorMode\"\
-    : \"standard\",\n        \"reduceOptions\": {\n          \"calcs\": [\n      \
-    \      \"lastNotNull\"\n          ],\n          \"fields\": \"\",\n          \"\
-    values\": false\n        },\n        \"showPercentChange\": false,\n        \"\
-    textMode\": \"auto\",\n        \"wideLayout\": true\n      },\n      \"pluginVersion\"\
-    : \"12.4.1\",\n      \"targets\": [\n        {\n          \"expr\": \"DCGM_FI_DEV_GPU_UTIL{Hostname=\\\
-    \"c0-47-0e-20-70-5c\\\"}\",\n          \"legendFormat\": \"GPU Util\",\n     \
-    \     \"refId\": \"A\"\n        }\n      ],\n      \"title\": \"Wet2 GPU Util\"\
-    ,\n      \"type\": \"stat\"\n    },\n    {\n      \"fieldConfig\": {\n       \
-    \ \"defaults\": {\n          \"decimals\": 0,\n          \"mappings\": [],\n \
-    \         \"max\": 100,\n          \"min\": 0,\n          \"thresholds\": {\n\
-    \            \"mode\": \"absolute\",\n            \"steps\": [\n             \
-    \ {\n                \"color\": \"green\",\n                \"value\": 0\n   \
-    \           },\n              {\n                \"color\": \"red\",\n       \
-    \         \"value\": 80\n              }\n            ]\n          },\n      \
-    \    \"unit\": \"percent\"\n        },\n        \"overrides\": []\n      },\n\
-    \      \"gridPos\": {\n        \"h\": 6,\n        \"w\": 8,\n        \"x\": 16,\n\
-    \        \"y\": 6\n      },\n      \"id\": 6,\n      \"options\": {\n        \"\
-    colorMode\": \"value\",\n        \"graphMode\": \"area\",\n        \"justifyMode\"\
-    : \"auto\",\n        \"orientation\": \"auto\",\n        \"percentChangeColorMode\"\
-    : \"standard\",\n        \"reduceOptions\": {\n          \"calcs\": [\n      \
-    \      \"lastNotNull\"\n          ],\n          \"fields\": \"\",\n          \"\
-    values\": false\n        },\n        \"showPercentChange\": false,\n        \"\
-    textMode\": \"auto\",\n        \"wideLayout\": true\n      },\n      \"pluginVersion\"\
-    : \"12.4.1\",\n      \"targets\": [\n        {\n          \"expr\": \"DCGM_FI_DEV_GPU_UTIL{Hostname=\\\
-    \"server4.selab.mad.redhat.com\\\"}\",\n          \"legendFormat\": \"GPU Util\"\
-    ,\n          \"refId\": \"A\"\n        }\n      ],\n      \"title\": \"Wet3 GPU\
-    \ Util\",\n      \"type\": \"stat\"\n    },\n    {\n      \"fieldConfig\": {\n\
-    \        \"defaults\": {\n          \"decimals\": 0,\n          \"mappings\":\
-    \ [],\n          \"thresholds\": {\n            \"mode\": \"absolute\",\n    \
-    \        \"steps\": [\n              {\n                \"color\": \"green\",\n\
-    \                \"value\": 0\n              },\n              {\n           \
-    \     \"color\": \"red\",\n                \"value\": 80\n              }\n  \
-    \          ]\n          },\n          \"unit\": \"mbytes\"\n        },\n     \
-    \   \"overrides\": []\n      },\n      \"gridPos\": {\n        \"h\": 6,\n   \
-    \     \"w\": 8,\n        \"x\": 0,\n        \"y\": 12\n      },\n      \"id\"\
-    : 7,\n      \"options\": {\n        \"colorMode\": \"value\",\n        \"graphMode\"\
-    : \"area\",\n        \"justifyMode\": \"auto\",\n        \"orientation\": \"auto\"\
-    ,\n        \"percentChangeColorMode\": \"standard\",\n        \"reduceOptions\"\
-    : {\n          \"calcs\": [\n            \"lastNotNull\"\n          ],\n     \
-    \     \"fields\": \"\",\n          \"values\": false\n        },\n        \"showPercentChange\"\
-    : false,\n        \"textMode\": \"auto\",\n        \"wideLayout\": true\n    \
-    \  },\n      \"pluginVersion\": \"12.4.1\",\n      \"targets\": [\n        {\n\
-    \          \"expr\": \"DCGM_FI_DEV_FB_USED{Hostname=\\\"c0-47-0e-20-70-42\\\"\
-    }\",\n          \"legendFormat\": \"VRAM Used\",\n          \"refId\": \"A\"\n\
-    \        }\n      ],\n      \"title\": \"Wet1 VRAM Used\",\n      \"type\": \"\
-    stat\"\n    },\n    {\n      \"fieldConfig\": {\n        \"defaults\": {\n   \
-    \       \"decimals\": 0,\n          \"mappings\": [],\n          \"thresholds\"\
-    : {\n            \"mode\": \"absolute\",\n            \"steps\": [\n         \
-    \     {\n                \"color\": \"green\",\n                \"value\": 0\n\
-    \              },\n              {\n                \"color\": \"red\",\n    \
-    \            \"value\": 80\n              }\n            ]\n          },\n   \
-    \       \"unit\": \"mbytes\"\n        },\n        \"overrides\": []\n      },\n\
-    \      \"gridPos\": {\n        \"h\": 6,\n        \"w\": 8,\n        \"x\": 8,\n\
-    \        \"y\": 12\n      },\n      \"id\": 8,\n      \"options\": {\n       \
-    \ \"colorMode\": \"value\",\n        \"graphMode\": \"area\",\n        \"justifyMode\"\
-    : \"auto\",\n        \"orientation\": \"auto\",\n        \"percentChangeColorMode\"\
-    : \"standard\",\n        \"reduceOptions\": {\n          \"calcs\": [\n      \
-    \      \"lastNotNull\"\n          ],\n          \"fields\": \"\",\n          \"\
-    values\": false\n        },\n        \"showPercentChange\": false,\n        \"\
-    textMode\": \"auto\",\n        \"wideLayout\": true\n      },\n      \"pluginVersion\"\
-    : \"12.4.1\",\n      \"targets\": [\n        {\n          \"expr\": \"DCGM_FI_DEV_FB_USED{Hostname=\\\
-    \"c0-47-0e-20-70-5c\\\"}\",\n          \"legendFormat\": \"VRAM Used\",\n    \
-    \      \"refId\": \"A\"\n        }\n      ],\n      \"title\": \"Wet2 VRAM Used\"\
-    ,\n      \"type\": \"stat\"\n    },\n    {\n      \"fieldConfig\": {\n       \
-    \ \"defaults\": {\n          \"decimals\": 0,\n          \"mappings\": [],\n \
-    \         \"thresholds\": {\n            \"mode\": \"absolute\",\n           \
-    \ \"steps\": [\n              {\n                \"color\": \"green\",\n     \
-    \           \"value\": 0\n              },\n              {\n                \"\
-    color\": \"red\",\n                \"value\": 80\n              }\n          \
-    \  ]\n          },\n          \"unit\": \"mbytes\"\n        },\n        \"overrides\"\
-    : []\n      },\n      \"gridPos\": {\n        \"h\": 6,\n        \"w\": 8,\n \
-    \       \"x\": 16,\n        \"y\": 12\n      },\n      \"id\": 9,\n      \"options\"\
-    : {\n        \"colorMode\": \"value\",\n        \"graphMode\": \"area\",\n   \
-    \     \"justifyMode\": \"auto\",\n        \"orientation\": \"auto\",\n       \
-    \ \"percentChangeColorMode\": \"standard\",\n        \"reduceOptions\": {\n  \
-    \        \"calcs\": [\n            \"lastNotNull\"\n          ],\n          \"\
-    fields\": \"\",\n          \"values\": false\n        },\n        \"showPercentChange\"\
-    : false,\n        \"textMode\": \"auto\",\n        \"wideLayout\": true\n    \
-    \  },\n      \"pluginVersion\": \"12.4.1\",\n      \"targets\": [\n        {\n\
-    \          \"expr\": \"DCGM_FI_DEV_FB_USED{Hostname=\\\"server4.selab.mad.redhat.com\\\
-    \"}\",\n          \"legendFormat\": \"VRAM Used\",\n          \"refId\": \"A\"\
-    \n        }\n      ],\n      \"title\": \"Wet3 VRAM Used\",\n      \"type\": \"\
-    stat\"\n    }\n  ],\n  \"preload\": false,\n  \"refresh\": \"10s\",\n  \"schemaVersion\"\
-    : 42,\n  \"tags\": [\n    \"wetlab\",\n    \"gpu\",\n    \"openshift\"\n  ],\n\
-    \  \"templating\": {\n    \"list\": []\n  },\n  \"time\": {\n    \"from\": \"\
-    now-6h\",\n    \"to\": \"now\"\n  },\n  \"timepicker\": {},\n  \"timezone\": \"\
-    browser\",\n  \"title\": \"wet-lab-metrics\",\n  \"uid\": \"ad5c4pg\",\n  \"version\"\
-    : 1,\n  \"weekStart\": \"\"\n}"
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "links": [],
+  "panels": [
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "openshift-prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "decimals": 0,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "#EAB839",
+                "value": 75
+              },
+              {
+                "color": "red",
+                "value": 85
+              }
+            ]
+          },
+          "unit": "celsius"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 8,
+        "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {
+          "valueSize": 65
+        },
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.1",
+      "targets": [
+        {
+          "expr": "DCGM_FI_DEV_GPU_TEMP{Hostname=\"c0-47-0e-20-70-42\"}",
+          "legendFormat": "GPU Temp",
+          "refId": "A"
+        }
+      ],
+      "title": "Wet1 GPU Temp",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "openshift-prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "decimals": 0,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "#EAB839",
+                "value": 75
+              },
+              {
+                "color": "red",
+                "value": 85
+              }
+            ]
+          },
+          "unit": "celsius"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 8,
+        "x": 8,
+        "y": 0
+      },
+      "id": 2,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {
+          "valueSize": 65
+        },
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.1",
+      "targets": [
+        {
+          "expr": "DCGM_FI_DEV_GPU_TEMP{Hostname=\"c0-47-0e-20-70-5c\"}",
+          "legendFormat": "GPU Temp",
+          "refId": "A"
+        }
+      ],
+      "title": "Wet2 GPU Temp",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "openshift-prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "decimals": 0,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "#EAB839",
+                "value": 75
+              },
+              {
+                "color": "red",
+                "value": 85
+              }
+            ]
+          },
+          "unit": "celsius"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 8,
+        "x": 16,
+        "y": 0
+      },
+      "id": 3,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {
+          "valueSize": 65
+        },
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.1",
+      "targets": [
+        {
+          "expr": "DCGM_FI_DEV_GPU_TEMP{Hostname=\"server4.selab.mad.redhat.com\"}",
+          "legendFormat": "GPU Temp",
+          "refId": "A"
+        }
+      ],
+      "title": "Wet3 GPU Temp",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "openshift-prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "decimals": 0,
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 8,
+        "x": 0,
+        "y": 6
+      },
+      "id": 4,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {
+          "valueSize": 65
+        },
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.1",
+      "targets": [
+        {
+          "expr": "DCGM_FI_DEV_GPU_UTIL{Hostname=\"c0-47-0e-20-70-42\"}",
+          "legendFormat": "GPU Util",
+          "refId": "A"
+        }
+      ],
+      "title": "Wet1 GPU Util",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "openshift-prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "decimals": 0,
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 8,
+        "x": 8,
+        "y": 6
+      },
+      "id": 5,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {
+          "valueSize": 65
+        },
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.1",
+      "targets": [
+        {
+          "expr": "DCGM_FI_DEV_GPU_UTIL{Hostname=\"c0-47-0e-20-70-5c\"}",
+          "legendFormat": "GPU Util",
+          "refId": "A"
+        }
+      ],
+      "title": "Wet2 GPU Util",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "openshift-prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "decimals": 0,
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 8,
+        "x": 16,
+        "y": 6
+      },
+      "id": 6,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {
+          "valueSize": 65
+        },
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.1",
+      "targets": [
+        {
+          "expr": "DCGM_FI_DEV_GPU_UTIL{Hostname=\"server4.selab.mad.redhat.com\"}",
+          "legendFormat": "GPU Util",
+          "refId": "A"
+        }
+      ],
+      "title": "Wet3 GPU Util",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "openshift-prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "decimals": 0,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "mbytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 8,
+        "x": 0,
+        "y": 12
+      },
+      "id": 7,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {
+          "valueSize": 65
+        },
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.1",
+      "targets": [
+        {
+          "expr": "DCGM_FI_DEV_FB_USED{Hostname=\"c0-47-0e-20-70-42\"}",
+          "legendFormat": "VRAM Used",
+          "refId": "A"
+        }
+      ],
+      "title": "Wet1 VRAM Used",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "openshift-prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "decimals": 0,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "mbytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 8,
+        "x": 8,
+        "y": 12
+      },
+      "id": 8,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {
+          "valueSize": 65
+        },
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.1",
+      "targets": [
+        {
+          "expr": "DCGM_FI_DEV_FB_USED{Hostname=\"c0-47-0e-20-70-5c\"}",
+          "legendFormat": "VRAM Used",
+          "refId": "A"
+        }
+      ],
+      "title": "Wet2 VRAM Used",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "openshift-prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "decimals": 0,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "mbytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 8,
+        "x": 16,
+        "y": 12
+      },
+      "id": 9,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {
+          "valueSize": 65
+        },
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.1",
+      "targets": [
+        {
+          "expr": "DCGM_FI_DEV_FB_USED{Hostname=\"server4.selab.mad.redhat.com\"}",
+          "legendFormat": "VRAM Used",
+          "refId": "A"
+        }
+      ],
+      "title": "Wet3 VRAM Used",
+      "type": "stat"
+    }
+  ],
+  "preload": false,
+  "refresh": "10s",
+  "schemaVersion": 42,
+  "tags": [
+    "wetlab",
+    "gpu",
+    "openshift"
+  ],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "wet-lab-metrics",
+  "uid": "ad5c4pg",
+  "version": 30,
+  "weekStart": ""
+}
