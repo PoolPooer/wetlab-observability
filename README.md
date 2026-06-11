@@ -16,3 +16,22 @@ Infrastructure as Code for the Wetlab monitoring stack.
 ```bash
 oc project wetlab-monitoring
 oc apply -f grafana/dashboards/
+```
+
+## Restore dashboards
+```bash
+oc apply -f grafana/dashboards/wetlab-gpu-dashboard.yaml
+oc apply -f grafana/dashboards/wet-lab-system-health-dashboard.yaml
+```
+
+## Raspberry Pi
+
+Copy:
+
+raspberry-pi/grafana-kiosk.service
+
+Restart:
+```bash
+sudo systemctl daemon-reload
+sudo systemctl restart grafana-kiosk.service
+```
